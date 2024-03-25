@@ -1,9 +1,10 @@
+import PropTypes from 'prop-types';
 import { useState } from "react";
 import { AddCategory, GifGrid } from "./components";
 
-export const GitExpertApp = () => {
+export const GifExpertApp = ({defaultCategory=''}) => {
   
-  const [categories, setCategories] = useState(['Cowboy Bebop']);
+  const [categories, setCategories] = useState([defaultCategory]);
 
   const handleAddCategory = ( newCategory ) =>{
     if (categories.includes(newCategory)){
@@ -32,3 +33,8 @@ export const GitExpertApp = () => {
     </>
   )
 }
+
+
+GifExpertApp.propTypes = {
+  defaultCategory: PropTypes.string
+};
